@@ -9,18 +9,13 @@
 		<div>
     		<h1><a href="">Chicken Feather Blog</a></h1>
     	</div>
-    
+    {% for post in posts %}
     	<div>
-    		<p>published: 14.06.2014, 12:14</p>
-    		<h2><a href="">my first post</a></h2>
-    		<p>do you eat feathers?</p>
+    		<p>published: {{ post.published_date }}</p>
+    		<h1><a href="">{{ post.title }}</a></h1>
+        	<p>{{ post.text|linebreaksbr }}</p>
+    		
     	</div>
-    
-    	<div>
-    		<p>published: 14.06.2014, 12:14</p>
-    		<h2><a href="">my second post</a></h2>
-    		<p>feathers are awesome</p>
-    	</div>
-    
+    {% endfor %}
 	</body>
 </html>
